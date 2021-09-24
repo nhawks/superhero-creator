@@ -10,11 +10,11 @@
     <h1>Create a new superhero</h1>
     <form action="{% url 'superheroes:create' %}" method="post">
         {% csrf_token %}
-        Name: <input type="text" name="name" id="name"><br>
-        Alter Ego: <input type="text" name="alter_ego" id="alter_ego"><br>
-        Primary Ability: <input type="text" name="primary" id="primary"><br>
-        Secondary Ability: <input type="text" name="secondary" id="secondary"><br>
-        Catchphrase: <input type="text" name="catch_phrase" id="catch_phrase"><br>
+        Name: <input type="text" name="name" id="name" placeholder="Superman"><br>
+        Alter Ego: <input type="text" name="alter_ego" id="alter_ego" placeholder="Clark Kent"><br>
+        Primary Ability: <input type="text" name="primary" id="primary" placeholder="Superhuman Strength"><br>
+        Secondary Ability: <input type="text" name="secondary" id="secondary" placeholder="Flight"><br>
+        Catchphrase: <input type="text" name="catch_phrase" id="catch_phrase" placeholder="Up, up, and away!"><br>
         <input type="submit" value="Add!">
     </form>
     <h3><a href="{% url 'superheroes:index' %}">Return Home</a></h3>
