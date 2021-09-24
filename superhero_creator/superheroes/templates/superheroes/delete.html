@@ -16,6 +16,7 @@
         <li>Secondary Ability: {{del_hero.secondary_ability}}</li>
         <li>Catchphrase: {{del_hero.catch_phrase}}</li>
     </ul>
+    <h3><a href="{% url 'superheroes:index' %}">Return Home</a></h3>
     <h3>Are You sure you want to delete {{del_hero.name}}?</h3>
     <form action="{% url 'superheroes:delete' del_hero.id %}" method="post">
         {% csrf_token %}

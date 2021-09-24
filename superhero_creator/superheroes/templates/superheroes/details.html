@@ -16,6 +16,7 @@
         <li>Catchphrase: {{single_hero.catch_phrase}}</li>
     </ul>
     <h3><a href="{% url 'superheroes:edit' single_hero.id %}">Edit Hero</a></h3>
+    <h3><a href="{% url 'superheroes:delete' single_hero.id %}">Delete Hero</a></h3>
     <h3><a href="{% url 'superheroes:index' %}">Return Home</a></h3>
 </body>
 </html>

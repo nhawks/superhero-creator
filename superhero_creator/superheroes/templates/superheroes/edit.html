@@ -16,6 +16,7 @@
         <li>Secondary Ability: {{edit_hero.secondary_ability}}</li>
         <li>Catchphrase: {{edit_hero.catch_phrase}}</li>
     </ul>
+    <h3><a href="{% url 'superheroes:delete' edit_hero.id %}">Delete Hero</a></h3>
     <h3><a href="{% url 'superheroes:index' %}">Return Home</a></h3>
     <br>
     <h2>{{edit_hero}} Edit Details</h2>
