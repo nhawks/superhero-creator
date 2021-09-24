@@ -65,3 +65,12 @@ def edit(request, hero_id):
         
     else:
         return render(request, 'superheroes/edit.html', context)
+
+def delete(request, hero_id):
+    del_hero = Superhero.objects.get(pk=hero_id)
+    context = {
+        'del_hero': del_hero
+    }
+    del_hero.delete()
+    #?return user to superheroes/index.html
+    return HttpResponseRedirect(reverse('superheroes:index'))
