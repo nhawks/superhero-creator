@@ -1,19 +1,25 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'superheroes/css/style.css' %}">
     <title>Home | Superhero</title>
 </head>
 <body>
     <h1>List of Heroes</h1>
+    <img src="{% static 'superheroes/images/wonder_woman.jpg' %}" alt="Wonder Woman">
+    <img src="{% static 'superheroes/images/flash.jpg' %}" alt="Flash">
+    <img src="{% static 'superheroes/images/batman.jpg' %}" alt="Batman">
     <ul>
         {% for hero in all_heroes %}
         <li> <h2>{{hero.name}} - <a href="{% url 'superheroes:details' hero.id %}">Click for Hero Details!</a></h2> 
         </li>
         {% endfor %}
     </ul>
-    <a href="{% url 'superheroes:create' %}">Create a new hero!</a>
+    <h2><a href="{% url 'superheroes:create' %}">Create a new hero!</a></h2>
 </body>
 </html>
