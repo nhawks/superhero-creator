@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete | Hero</title>
+</head>
+<body>
+    <h1>Delete Hero</h1>
+    <h2>{{del_hero.name}} Details</h2>
+    <ul>
+        <li>Name: {{del_hero.name}}</li>
+        <li>Alter Ego: {{del_hero.alter_ego}}</li>
+        <li>Primary Ability: {{del_hero.primary_ability}}</li>
+        <li>Secondary Ability: {{del_hero.secondary_ability}}</li>
+        <li>Catchphrase: {{del_hero.catch_phrase}}</li>
+    </ul>
+    <h3>Are You sure you want to delete {{del_hero.name}}?</h3>
+    <form action="{% url 'superheroes:delete' del_hero.id %}" method="post">
+        {% csrf_token %}
+        <input type="radio" id='yes' name='yes'>
+        <label for='html'>Yes</label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
