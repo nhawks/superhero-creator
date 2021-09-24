@@ -22,11 +22,11 @@
     <h2>{{edit_hero}} Edit Details</h2>
     <form action="{% url 'superheroes:edit' edit_hero.id %}" method="post">
         {% csrf_token %}
-        Name: <input type="text" name="name" id="name"><br>
-        Alter Ego: <input type="text" name="alter_ego" id="alter_ego"><br>
-        Primary Ability: <input type="text" name="primary" id="primary"><br>
-        Secondary Ability: <input type="text" name="secondary" id="secondary"><br>
-        Catchphrase: <input type="text" name="catch_phrase" id="catch_phrase"><br>
+        Name: <input type="text" value='{{edit_hero.name}}' name="name" id="name"><br>
+        Alter Ego: <input type="text" value='{{edit_hero.alter_ego}}' name="alter_ego" id="alter_ego"><br>
+        Primary Ability: <input type="text" value='{{edit_hero.primary_ability}}' name="primary" id="primary"><br>
+        Secondary Ability: <input type="text" value='{{edit_hero.secondary_ability}}' name="secondary" id="secondary"><br>
+        Catchphrase: <input type="text" value='{{edit_hero.catch_phrase}}' name="catch_phrase" id="catch_phrase"><br>
         <input type="submit" value="Submit Changes">
     </form>
 </body>
