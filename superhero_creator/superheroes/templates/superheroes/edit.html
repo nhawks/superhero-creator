@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit | Hero</title>
+</head>
+<body>
+    <h1>Edit Hero</h1>
+    <h2>{{edit_hero}} Current Details</h2>
+    <ul>
+        <li>Alter Ego: {{edit_hero.alter_ego}}</li>
+        <li>Primary Ability: {{edit_hero.primary_ability}}</li>
+        <li>Secondary Ability: {{edit_hero.secondary_ability}}</li>
+        <li>Catchphrase: {{edit_hero.catch_phrase}}</li>
+    </ul>
+    <h3><a href="{% url 'superheroes:index' %}">Return Home</a></h3>
+    <br>
+    <h2>{{edit_hero}} Edit Details</h2>
+    <form action="{% url 'superheroes:edit' %}" method="post">
+        {% csrf_token %}
+        Name: <input type="text" name="name" id="name"><br>
+        Alter Ego: <input type="text" name="alter_ego" id="alter_ego"><br>
+        Primary Ability: <input type="text" name="primary" id="primary"><br>
+        Secondary Ability: <input type="text" name="secondary" id="secondary"><br>
+        Catchphrase: <input type="text" name="catch_phrase" id="catch_phrase"><br>
+        <input type="submit" value="Submit Changes">
+    </form>
+    <h3><a href="{% url 'superheroes:index' %}">Return Home</a></h3>
+</body>
+</html>
