@@ -1,3 +1,4 @@
+from django.db.models.fields import CommaSeparatedIntegerField
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -71,6 +72,10 @@ def delete(request, hero_id):
     context = {
         'del_hero': del_hero
     }
-    del_hero.delete()
-    #?return user to superheroes/index.html
-    return HttpResponseRedirect(reverse('superheroes:index'))
+
+    if request.method == "POST":
+        del_hero.delete()
+        #?return user to superheroes/index.html
+        return HttpResponseRedirect(reverse('superheroes:index'))
+    else:
+        return render(request, 'superheroes/delete.html', context)
