@@ -16,13 +16,6 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -113,3 +106,10 @@ STACFILES_DIRS = [
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# This will import the local_settings.py file
+# If you receive messages about missing a SECRET_KEY, you are likely missing the local_settings.py due to re-cloning your repo
+try:
+    from .local_settings import *
+except ImportError:
+    pass
