@@ -19,11 +19,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c24_vtj0!_605+z6!e^z&4uh&f6$48x%(=xj1zubf+*6zw$1ts'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -69,24 +64,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'superhero_creator.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'mysql.connector.django',
-        'NAME': 'superhero_db',
-        'USER': 'root',
-        'PASSWORD': 'MyP@$$W0rd!',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS' : {
-            'autocommit': True
-        }
-    }
-}
 
 
 # Password validation
